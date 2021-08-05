@@ -1,19 +1,24 @@
-language: python
-python:
-  - "3.6"     
-script:
-  - pytest
-# language: node_js
-# node_js:
-#   - "10"
-# services:
-#   - xvfb
-# dist: trusty
-# addons:
-#   chrome: stable
-# before_install:
-#   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-# before_script:
-#   - npm install chromedriver
-#   script:
-#   - xvfb-run npm test
+jobs:
+  include:
+    - language: python
+      python:
+        - "3.6"     
+      script:
+        - pytest
+
+    - language: node_js
+      node_js:
+        - "8"
+      services:
+        - xvfb
+      dist: trusty
+      addons:
+        chrome: stable
+      before_install:
+        - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+      script:
+        - xvfb-run npm test
+
+  
+
+
