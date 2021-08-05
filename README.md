@@ -49,7 +49,7 @@ I decided to use Python and JavaScrip to show a little versatility and used e2e 
 The approach I use in was to make the e2e tests and api test to complement eachother.
 I try to focus the in the response I got from the api to test things that would be hard in the e2e and vice versa.
 
-f. What could be the next steps to your project
+# f. What could be the next steps to your project
 
 The next step besides a more exaustive tests of the previous mention scenarios. 
 For exemple there is still enumerous aways i can manipulate the the json response to test things like the number of same items or the limit of these and there were also other approches i could add and remove items in the card (on the web)
