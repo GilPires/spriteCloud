@@ -26,7 +26,7 @@ module.exports = {
         browserName: 'chrome',
         acceptSslCerts: true,
         chromeOptions: {
-          args: ['no-sandbox', 'window-size=1280,800', 'disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies'],
+          args: ['headless','no-sandbox', 'window-size=1280,800', 'disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies'],
           w3c: false,
         },
       },
