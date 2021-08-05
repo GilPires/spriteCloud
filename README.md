@@ -19,7 +19,7 @@
    
     $ npm test
 
--Notes:
+-Important know:
     
     Sometimes the latest release of chrome and chromedriver are diffent so make sure these are the same of the test might fail
     
