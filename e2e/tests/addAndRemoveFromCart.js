@@ -1,9 +1,9 @@
 
 module.exports = {
   
-  'Test main page': (browser) => {
+  'Test add and remove items from cart': (browser) => {
     const {url, email} = browser.globals;
-    const page = browser.page.mainPage();
+    const page = browser.page.page();
     browser
       .url(url)
       .assert.urlEquals(url);
@@ -81,7 +81,7 @@ module.exports = {
             .assert.attributeContains(quantityOfItemInCart, 'value', 3)
             .assert.visible(deleteItemButton)
             .click(deleteItemButton)
-            .assert.not.elementPresent(cartItem)
+            .assert.not.elementPresent(cartItem, 15000)
         }
         // test other way of deleting from cart 
         else if(i==6){
@@ -89,29 +89,12 @@ module.exports = {
             .assert.attributeContains(quantityOfItemInCart, 'value', 1)
             .assert.visible(minusQuantityButton)
             .click(minusQuantityButton)
-            .assert.not.elementPresent(cartItem)
+            .assert.not.elementPresent(cartItem, 15000)
         }
         else{
           browser
             .assert.attributeContains(quantityOfItemInCart, 'value', 1)
         }
     }
-    // test register scenario
-    browser
-      .url(url.concat('?controller=order&step=1'));
-    // test invalid email
-    page
-      .assert.visible("@createAccountInput")
-      .setValue('@createAccountInput', 'Jonh')
-      .assert.visible("@createAccountButton")
-      .click("@createAccountButton")
-      .assert.visible('@invalidEmaillAlert')
-    //test valid email
-    .assert.visible("@createAccountInput")
-    .setValue('@createAccountInput', email)
-    .assert.visible("@createAccountButton")
-    .click("@createAccountButton")
-    .assert.visible('@personalInformationTitle')
-    browser.end();
   },
 };

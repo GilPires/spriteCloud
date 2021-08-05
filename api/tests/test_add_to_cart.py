@@ -17,6 +17,8 @@ payload_add_to_cart = {
 	"token": "e817bb0705dd58da8db074c69f729fd8"
 }
 
+# I was not able to get the right response on the delete POST service
+
 # payload_delete_from_cart = {
 # 	"controller": "cart",
 # 	"delete": 1,

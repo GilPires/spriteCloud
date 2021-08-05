@@ -8,6 +8,7 @@ module.exports = {
   custom_assertions_path: [
     'e2e/customAssertions',
   ],
+  globals_path: 'e2e/nightwatchglobal.js',
   page_objects_path: 'e2e/pageObjects',
 
   test_settings: {
