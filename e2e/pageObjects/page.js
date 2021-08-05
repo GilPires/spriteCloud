@@ -40,5 +40,9 @@ module.exports = {
         selector: '//h3[contains(text(), "Your personal information")]',
         locateStrategy: 'xpath',
       },
+      loginPageButton: {
+        selector: '//a[@title="Log in to your customer account"]',
+        locateStrategy: 'xpath',
+      },
     },
   };

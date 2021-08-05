@@ -6,7 +6,11 @@ module.exports = {
       const page = browser.page.page();
       // test register scenario
       browser
-        .url(url.concat('?controller=order&step=1'));
+        .url(url);
+      page
+        .waitForElementVisible('@loginPageButton')
+        .click('@loginPageButton')
+        .assert.urlContains(url.concat('?controller=authentication'));
       // test invalid email
       page
         .assert.visible("@createAccountInput")

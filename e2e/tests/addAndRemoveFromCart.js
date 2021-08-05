@@ -57,6 +57,7 @@ module.exports = {
     for(var i =7; i>=1;i--){
       const cartItem = {
         selector: `(//tr[contains(@id, 'product_')])[${i}]`,
+        timeout: 15000,
         locateStrategy: 'xpath',
       };
       const minusQuantityButton=  {
@@ -81,7 +82,7 @@ module.exports = {
             .assert.attributeContains(quantityOfItemInCart, 'value', 3)
             .assert.visible(deleteItemButton)
             .click(deleteItemButton)
-            .assert.not.elementPresent(cartItem, 15000)
+            .assert.not.elementPresent(cartItem)
         }
         // test other way of deleting from cart 
         else if(i==6){
@@ -89,7 +90,7 @@ module.exports = {
             .assert.attributeContains(quantityOfItemInCart, 'value', 1)
             .assert.visible(minusQuantityButton)
             .click(minusQuantityButton)
-            .assert.not.elementPresent(cartItem, 15000)
+            .assert.not.elementPresent(cartItem)
         }
         else{
           browser
