@@ -2,7 +2,7 @@ language: python
 python:
   - "3.6"     
 script:
-  - python -m pip install requests
+  - pip install -r requirements.txt
   - pytest
 # language: node_js
 # node_js:
