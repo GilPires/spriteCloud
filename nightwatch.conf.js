@@ -25,7 +25,7 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'chrome',
         acceptSslCerts: true,
-        chromeOptions: {
+        chromeOptions: {  // remove the 'headless' argument to see the browser while running the test
           args: ['headless','no-sandbox', 'window-size=1280,800', 'disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies'],
           w3c: false,
         },

@@ -18,6 +18,18 @@ jobs:
         - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
       script:
         - npm test
+      language: ruby
+      rvm:
+        - 2.7
+      install:
+        - bundle install
+      script:
+        - bundle exec cucumber -f json -o output.json -f pretty -c || true
+        - curl -X POST
+              -H 'x-api-key:'"$API_KEY"''
+              -H 'multipart/form-data'
+              -F 'file[]=@output.json'        
+              'https://app.calliope.pro/api/v2/profile/'"$PROFILE_ID"'/import/cucumber?os=myos&platform=myplatform&build=mybuild'
 
   
 
