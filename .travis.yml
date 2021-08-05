@@ -11,7 +11,7 @@ jobs:
         - "10"
       services:
         - xvfb
-      dist: trusty
+      dist: xenial
       addons:
         chrome: stable
       before_install:
