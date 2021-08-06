@@ -19,11 +19,11 @@
    
     $ npm test
 
--Important know:
-    
-    Sometimes the latest release of chrome and chromedriver are diffent so make sure these are the same of the test might fail
-    
-    Go to the file nightwatch.conf.js and in the 'chromeOptions', 'args' array remove 'headless' to see the browser while running the e2e tests
+Notes:
+
+Sometimes the latest release of chrome and chromedriver are diffent so make sure these are the same of the test might fail
+
+Go to the file nightwatch.conf.js and in the 'chromeOptions', 'args' array remove 'headless' to see the browser while running the e2e tests
 
 # b. How to run the test in a CI/CD pipeline
 
